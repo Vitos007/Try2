@@ -17,7 +17,6 @@ public class TriangelSquare {
         float halfLength = length / 2;
         square = (float)Math.round(Math.sqrt(halfLength * Math.abs(halfLength - side12) * Math.abs(halfLength - side23) * Math.abs(halfLength - side31)));
 
-
                 /*your code here*/
 
         System.out.println("Length of all sides is " + length);

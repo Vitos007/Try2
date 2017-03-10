@@ -5,6 +5,7 @@ public class ClockAngel {
         int hours = 2;
         int mins = 61;
         int result = 0;
+
         /*Your code here*/
 
         if (hours >= 0 && hours <= 12 && mins >= 0 && mins <= 60){
