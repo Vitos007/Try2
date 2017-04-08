@@ -1,11 +1,11 @@
-package edu.source.it.lectures.lecture4.examples.queue;
+package HomeworkLecture4.queue;
 
 public class Node {
     private int value;
     private Node next;
 
     public Node(int value) {
-        this.value =value;
+        this.value = value;
     }
 
     public int getValue() {
@@ -49,16 +49,14 @@ public class Node {
      * If position is more than list size prints error message
      * @param position number of the Node starting from the head
      **/
-    public void remove(int position) {
+    public void remove (int position) {
         Node last = this;
-        if (last.getNext() != null) {
-            last.getNext().setNext(last);
-        } else {
-            System.out.println("Error!");
+        for (int i = 1; i < position - 1; i++) {
+          last = last.getNext();
         }
+        last.setNext(last.getNext().getNext());
 
         /*Your code here*/
-
     }
 
     /**
@@ -69,12 +67,12 @@ public class Node {
      */
     public void addNode(int position, Node node) {
         Node last = this;
-        if (last.getNext() != null) {
-            last.getNext().setNext(last.getNext().getNext());
-        } else {
-            last.setNext(last.getNext());
+        for (int i = 1; i < position - 1; i++) {
+            last = last.getNext();
         }
-        /*Your code here*/
+        Node lastTemp = last.getNext();
+        last.setNext(node);
+        last.getNext().setNext(lastTemp);
     }
 
     /**
@@ -84,7 +82,14 @@ public class Node {
      * @return Node that located on the position from the tail (end of list) if position exists in list
      */
     public Node getFromTail(int position) {
-        /*Your code here and please remove "return null". I've put it for ability to compile code*/
-        return null;
+        Node last = this;
+        int index = 0;
+        while (last.getNext() != null) {
+            last = last.getNext();
+            index = index + 1;
+        }
+        index = index - position;
+        Node back = new Node(index);
+        return back;
     }
 }

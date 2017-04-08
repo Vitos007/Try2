@@ -1,4 +1,4 @@
-package edu.source.it.lectures.lecture4.homework.visitors;
+package HomeworkLecture4.Visitors;
 
 import java.util.Calendar;
 import java.util.Random;

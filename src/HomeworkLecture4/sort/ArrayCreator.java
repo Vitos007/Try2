@@ -1,4 +1,4 @@
-package edu.source.it.lectures.lecture4.homework.sort;
+package HomeworkLecture4.sort;
 
 import java.util.Random;
 

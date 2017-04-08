@@ -5,17 +5,18 @@ package HomeworkLecture4;
  */
 public class Fibonachi {
     public static void main(String[] args) {
-        long startNumber = 1;
-        long nextNumber = 1;
-        double conditionGoldenSection = 1;
-
-        while (conditionGoldenSection != (1.618)){
-            long summ = startNumber + nextNumber;
-            startNumber = nextNumber;
-            nextNumber = summ;
-           // System.out.println(nextNumber);
-            conditionGoldenSection = Math.round((float)nextNumber/startNumber * Math.pow(10, 4)) / Math.pow(10, 4);
-            System.out.println(nextNumber);
-        }
+    int n = 18;
+    for (int i = 1; i < n + 1; i++){
+        System.out.println(fibbonachi(i));
+    }
+    }
+    public static int fibbonachi (int n){
+            if (n == 1)
+                return 1;
+            if (n == 2)
+            return 1;
+            int res = fibbonachi((n - 1)) + fibbonachi((n - 2));
+            return res;
     }
 }
+

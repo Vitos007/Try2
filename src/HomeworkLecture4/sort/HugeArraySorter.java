@@ -1,4 +1,4 @@
-package edu.source.it.lectures.lecture4.homework.sort;
+package HomeworkLecture4.sort;
 
 public class HugeArraySorter {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class HugeArraySorter {
 
         int rangeIndex = 0;
         int[] tempArray = new int[hugeArray.length];
-        for (int i = 1; i > 9; i++) {
+        for (int i = 0; i < 10; i++) {
             for (int j = 0; j < hugeArray.length; j++) {
                 if (hugeArray[j] == i) {
                     tempArray[rangeIndex] = hugeArray[j];

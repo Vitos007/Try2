@@ -1,4 +1,4 @@
-package edu.source.it.lectures.lecture4.homework.visitors;
+package HomeworkLecture4.Visitors;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -18,6 +18,19 @@ public class MaxVisitorInOffice {
             System.out.println("Leave " + new Date(visitor.getLeaveTime()));
         }
         int maxVisitorAtOnce = 0;
+        int maxVisitorAtOnceForThisIteration = 0;
+        for (Visitor visitor1 : visitors) {
+            for (Visitor visitor : visitors) {
+                if (visitor1.getComeTime() < visitor.getComeTime()
+                        & visitor1.getLeaveTime() > visitor.getComeTime()) {
+                    maxVisitorAtOnceForThisIteration++;
+                }
+                if (maxVisitorAtOnce < maxVisitorAtOnceForThisIteration) {
+                    maxVisitorAtOnce = maxVisitorAtOnceForThisIteration;
+                }
+            }
+            maxVisitorAtOnceForThisIteration = 0;
+        }
 
         /*Your code here*/
 
